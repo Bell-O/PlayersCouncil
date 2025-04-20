@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Hotel Hideaway Players Council</title>
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(138, 67, 226, 0.5);
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #bb86fc;
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 2rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // ดึง path จาก URL
+        const path = window.location.pathname.replace(/\/$/, '');
+        
+        // ตัดส่วน /2TB ออกถ้ามี (เพราะเป็นชื่อรีโพสิทอรี่)
+        const cleanPath = path.replace('/2TB', '');
+        
+        window.onload = function() {
+            // ตรวจสอบว่าเป็นหน้าไหน
+            if (cleanPath.includes('about')) {
+                window.location.href = 'about.html';
+            } else if (cleanPath.includes('apply')) {
+                window.location.href = 'apply.html';
+            } else {
+                // ถ้าไม่ตรงกับหน้าไหนเลย ให้กลับไปที่หน้าหลัก
+                window.location.href = 'index.html';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>กำลังเปลี่ยนเส้นทาง...</h1>
+    <div class="loader"></div>
+    <p>กำลังนำคุณไปยังหน้าที่ถูกต้อง</p>
+</body>
+</html>

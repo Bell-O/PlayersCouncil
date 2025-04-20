@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สมัครเข้าสภาผู้เล่น | Hotel Hideaway Players Council</title>
+    <meta name="description" content="เว็บไซต์อย่างเป็นทางการของสภาผู้เล่น Hotel Hideaway นำโดย 2TB">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+<div class="loading-screen" id="loading-screen">
+    <div class="loader-container">
+        <div class="logo-loader">
+            <img src="images/2TB.png" alt="Hotel Hideaway Players Council" class="loader-logo">
+        </div>
+        <div class="loader">
+            <div class="loader-bar"></div>
+        </div>
+        <div class="loader-text">กำลังโหลด...</div>
+    </div>
+</div>
+
+
+    <div class="page-container">
+        <!-- Notification Element -->
+        <div class="notification" id="notification">
+            <div class="notification-icon success" id="notification-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            <div class="notification-message" id="notification-message"></div>
+            <button class="notification-close" onclick="closeNotification()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-container">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-image">
+                        <img src="images/2TB.png" alt="Hotel Hideaway Players Council">
+                    </div>
+                    <span class="logo-text">Hotel Hideaway <span class="logo-text-hide">Players Council</span></span>
+                </a>
+
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">2TB</a>
+                    <a href="about.html" class="nav-link">เกี่ยวกับสภา</a>
+                    <a href="apply.html" class="nav-link active">สมัครเข้าสภาผู้เล่น</a>
+                </nav>
+
+<!-- แก้ไขส่วนของปุ่มเปลี่ยนภาษา -->
+<div class="language-switch">
+    <button onclick="setLanguage('th')" id="lang-th" class="lang-btn active">
+        <span class="lang-text">ไทย</span>
+    </button>
+    <span class="lang-divider">|</span>
+    <button onclick="setLanguage('en')" id="lang-en" class="lang-btn">
+        <span class="lang-text">ENG</span>
+    </button>
+</div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div class="mobile-menu">
+                <nav class="mobile-nav container">
+                    <a href="index.html" class="mobile-nav-link">2TB</a>
+                    <a href="about.html" class="mobile-nav-link">เกี่ยวกับสภา</a>
+                    <a href="apply.html" class="mobile-nav-link active">สมัครเข้าสภาผู้เล่น</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-th="สมัครเข้าสภาผู้เล่น Hotel Hideaway" data-en="Apply to Hotel Hideaway Players Council">สมัครเข้าสภาผู้เล่น Hotel Hideaway</h1>
+                    <div class="divider"></div>
+                </div>
+            </section>
+
+            <!-- Content Section -->
+            <section class="content-section">
+                <div class="container">
+                    <div class="glass-card info-card">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <h2 class="info-title" data-th="ก่อนที่คุณจะสมัคร" data-en="Before You Apply">ก่อนที่คุณจะสมัคร</h2>
+                        </div>
+
+                        <p class="info-text" data-th="โปรดตรวจสอบให้แน่ใจว่าคุณมีคุณสมบัติตรงตามข้อกำหนดเหล่านี้ก่อนส่งใบสมัคร" data-en="Please make sure you meet the following requirements before submitting your application">
+                            โปรดตรวจสอบให้แน่ใจว่าคุณมีคุณสมบัติตรงตามข้อกำหนดเหล่านี้ก่อนส่งใบสมัคร
+                        </p>
+
+                        <div class="info-sections">
+                            <div class="info-section">
+                                <h3 class="info-subtitle" data-th="คุณสมบัติ" data-en="Requirements">คุณสมบัติ</h3>
+                                <ul class="custom-list requirements-list">
+                                    <li data-th="มีอายุอย่างน้อย 17 ปี" data-en="Be at least 18 years old.">มีอายุอย่างน้อย 17 ปี</li>
+                                    <li data-th="เข้าใจและปฏิบัติตามแนวทางชุมชน" data-en="Understand the community guidelines and respect them.">เข้าใจและปฏิบัติตามแนวทางชุมชน</li>
+                                    <li data-th="ทำงานร่วมกับทีมได้ดีและมีส่วนร่วมอย่างมีประสิทธิภาพ" data-en="Work well as part of a team and contribute effectively.">ทำงานร่วมกับทีมได้ดีและมีส่วนร่วมอย่างมีประสิทธิภาพ</li>
+                                    <li data-th="ลงทะเบียนกับ Hotel Hideaway มาอย่างน้อย 6 เดือน" data-en="Have been registered with Hotel Hideaway for at least 6 months.">ลงทะเบียนกับ Hotel Hideaway มาอย่างน้อย 6 เดือน</li>
+                                    <li data-th="ไม่มีประวัติการถูกเตือนเกี่ยวกับคำพูดแสดงความเกลียดชังหรือพฤติกรรมรบกวนในเกม" data-en="Have no warnings for hate speech or disruptive behavior in the game.">ไม่มีประวัติการถูกเตือนเกี่ยวกับคำพูดแสดงความเกลียดชังหรือพฤติกรรมรบกวนในเกม</li>
+                                    <li data-th="มีแรงจูงใจในการจัดกิจกรรมชุมชนและส่งเสริมสภาพแวดล้อมการเล่นเกมที่ปลอดภัย" data-en="Be motivated to organize community events and promote a safe gaming environment.">มีแรงจูงใจในการจัดกิจกรรมชุมชนและส่งเสริมสภาพแวดล้อมการเล่นเกมที่ปลอดภัย</li>
+                                </ul>
+                            </div>
+
+                            <div class="info-section">
+                                <h3 class="info-subtitle" data-th="หมายเหตุสำคัญ" data-en="Important Notes">หมายเหตุสำคัญ</h3>
+                                <ul class="custom-list notes-list">
+                                    <li data-th="คุณสามารถส่งใบสมัครได้เพียงครั้งเดียวต่อรอบ" data-en="You can submit only one application per round.">คุณสามารถส่งใบสมัครได้เพียงครั้งเดียวต่อรอบ</li>
+                                    <li data-th="โปรดอย่าติดต่อฝ่ายสนับสนุนลูกค้าหรือช่องทางอื่น ๆ เพื่อสอบถามสถานะการสมัคร คุณจะได้รับการติดต่อหากได้รับเลือก" data-en="Please refrain from contacting customer support or other channels to inquire about your application status. You will be contacted if selected.">โปรดอย่าติดต่อฝ่ายสนับสนุนลูกค้าหรือช่องทางอื่น ๆ เพื่อสอบถามสถานะการสมัคร คุณจะได้รับการติดต่อหากได้รับเลือก</li>
+                                    <li data-th="Ambassadors ไม่สามารถให้ข้อมูลหรือคำแนะนำใด ๆ เกี่ยวกับใบสมัครของคุณ ใบสมัครทั้งหมดจะได้รับการตรวจสอบอย่างยุติธรรมและเป็นรายบุคคล" data-en="Ambassadors cannot provide any information or recommendations regarding your application. All applications are reviewed fairly and individually.">Ambassadors ไม่สามารถให้ข้อมูลหรือคำแนะนำใด ๆ เกี่ยวกับใบสมัครของคุณ ใบสมัครทั้งหมดจะได้รับการตรวจสอบอย่างยุติธรรมและเป็นรายบุคคล</li>
+                                    <li data-th="ใช้บัญชีเดียวเท่านั้นในการสมัคร การส่งใบสมัครซ้ำจะทำให้ถูกตัดสิทธิ์" data-en="Only one account can be used to apply. Duplicate applications will result in disqualification.">ใช้บัญชีเดียวเท่านั้นในการสมัคร การส่งใบสมัครซ้ำจะทำให้ถูกตัดสิทธิ์</li>
+                                    <li data-th="คุณไม่สามารถสมัครแทนคนอื่นได้ ใบสมัครต้องถูกส่งโดยผู้สมัครเอง" data-en="You cannot apply on behalf of someone else. Applications must be submitted by the applicant.">คุณไม่สามารถสมัครแทนคนอื่นได้ ใบสมัครต้องถูกส่งโดยผู้สมัครเอง</li>
+                                    <li data-th="อย่าเปลี่ยนชื่อในเกมของคุณในระหว่างกระบวนการคัดเลือก" data-en="Do not change your in-game name during the selection process.">อย่าเปลี่ยนชื่อในเกมของคุณในระหว่างกระบวนการคัดเลือก</li>
+                                </ul>
+                            </div>
+
+                            <div class="alert-box">
+                                <div class="alert-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg>
+                                </div>
+                                <div class="alert-content">
+                                    <h4 class="alert-title" data-th="ประกาศผล" data-en="Announcement of Results">ประกาศผล</h4>
+                                    <p class="alert-text" data-th-html="ผลการสมัครจะประกาศใน <a href='https://www.facebook.com/profile.php?id=100090158242868' target='_blank' class='alert-link'>Facebook</a> และ <a href='https://discord.gg/eEybV9ksBf' target='_blank' class='alert-link'>Discord</a> หากคุณได้รับเลือก จะมีการสัมภาษณ์ใน Discord โปรดเข้าร่วม <a href='https://discord.gg/eEybV9ksBf' target='_blank' class='alert-link'>Discord server</a> เพื่อความสะดวกในการดำเนินการ" data-en-html="The results will be announced on <a href='https://www.facebook.com/profile.php?id=100090158242868' target='_blank' class='alert-link'>Facebook</a> and <a href='https://discord.gg/eEybV9ksBf' target='_blank' class='alert-link'>Discord</a>. If you are selected, an interview will be conducted in Discord. Please join the <a href='https://discord.gg/eEybV9ksBf' target='_blank' class='alert-link'>Discord server</a> to facilitate the process.">
+                                        ผลการสมัครจะประกาศใน <a href='https://www.facebook.com/profile.php?id=100090158242868' target='_blank' class='alert-link'>Facebook</a> และ <a href='https://discord.gg/eEybV9ksBf' target='_blank' class='alert-link'>Discord</a> หากคุณได้รับเลือก จะมีการสัมภาษณ์ใน Discord โปรดเข้าร่วม <a href='https://discord.gg/eEybV9ksBf' target='_blank' class='alert-link'>Discord server</a> เพื่อความสะดวกในการดำเนินการ
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card form-card">
+                        <div class="form-header">
+                            <div class="form-image">
+                                <img src="images/Player.png" alt="Application Form">
+                            </div>
+                            <h2 class="form-title" data-th="แบบฟอร์มสมัครเข้าร่วมสภา" data-en="Council Application Form">แบบฟอร์มสมัครเข้าร่วมสภา</h2>
+                        </div>
+
+                        <form id="application-form" class="application-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label" data-th="ชื่อในเกม" data-en="Full Hideaway Name">ชื่อในเกม</label>
+                                <input type="text" id="name" name="entry.Hideaway Name" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="facebook" class="form-label" data-th="ลิงค์เฟส" data-en="Facebook Link">ลิงค์เฟส</label>
+                                <input type="text" id="facebook" name="entry.Facebook Link" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="why-join" class="form-label" data-th="ทำไมคุณถึงสนใจเข้าร่วมเป็นสมาชิกสภาผู้เล่นใน Hotel Hideaway?" data-en="Why are you interested in joining the Players' Council in Hotel Hideaway?">ทำไมคุณถึงสนใจเข้าร่วมเป็นสมาชิกสภาผู้เล่นใน Hotel Hideaway?</label>
+                                <textarea id="why-join" name="entry.Why are you interested in joining the Players' Council in Hotel Hideaway?" rows="5" class="form-textarea" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="skills" class="form-label" data-th="คุณมีทักษะหรือความรู้ในด้านใดที่คิดว่าจะช่วยให้สภาผู้เล่นดำเนินงานได้อย่างราบรื่น?" data-en="What skills or knowledge do you have that could help the council operate smoothly?">คุณมีทักษะหรือความรู้ในด้านใดที่คิดว่าจะช่วยให้สภาผู้เล่นดำเนินงานได้อย่างราบรื่น?</label>
+                                <textarea id="skills" name="entry.What skills or knowledge do you have that could help the council operate smoothly?" rows="5" class="form-textarea" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="conflict-resolution" class="form-label" data-th="หากมีความคิดเห็นที่ขัดแย้งกันในทีม คุณจะรับมือกับสถานการณ์นั้นอย่างไร?" data-en="How would you handle situations where there are conflicting opinions within the team?">หากมีความคิดเห็นที่ขัดแย้งกันในทีม คุณจะรับมือกับสถานการณ์นั้นอย่างไร?</label>
+                                <textarea id="conflict-resolution" name="entry.How would you handle situations where there are conflicting opinions within the team?" rows="5" class="form-textarea" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emergency" class="form-label" data-th="หากมีปัญหาที่ต้องการการจัดการด่วน คุณพร้อมที่จะช่วยแก้ไขทันทีหรือไม่?" data-en="Are you prepared to assist in resolving urgent issues immediately if needed?">หากมีปัญหาที่ต้องการการจัดการด่วน คุณพร้อมที่จะช่วยแก้ไขทันทีหรือไม่?</label>
+                                <textarea id="emergency" name="entry.Are you prepared to assist in resolving urgent issues immediately if needed?" rows="5" class="form-textarea" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="understanding" class="form-label" data-th="คุณเข้าใจบทบาทของสมาชิกสภาผู้เล่นใน Hotel Hideaway อย่างไร?" data-en="How do you understand the role of a Players' Council member in Hotel Hideaway?">คุณเข้าใจบทบาทของสมาชิกสภาผู้เล่นใน Hotel Hideaway อย่างไร?</label>
+                                <textarea id="understanding" name="entry.How do you understand the role of a Players' Council member in Hotel Hideaway?" rows="5" class="form-textarea" required></textarea>
+                            </div>
+
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms" class="checkbox-label">
+                                    <span data-th="ฉันยอมรับ" data-en="I agree to the">ฉันยอมรับ</span>
+                                    <button type="button" id="terms-button" class="terms-button">
+                                        <span data-th="ข้อกำหนดการใช้งาน" data-en="Terms of Use">ข้อกำหนดการใช้งาน</span>
+                                    </button>
+                                    <span data-th="สำหรับการเก็บข้อมูลและส่งต่อข้อมูลเพื่อการตัดสินใจ" data-en="for data collection and sharing for decision-making purposes.">สำหรับการเก็บข้อมูลและส่งต่อข้อมูลเพื่อการตัดสินใจ</span>
+                                </label>
+                            </div>
+
+                            <button type="button" onclick="submitForm()" class="btn btn-primary submit-btn" id="submit-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="submit-icon">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span data-th="ส่งใบสมัคร" data-en="Submit Application">ส่งใบสมัคร</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-divider"></div>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <div class="footer-logo-image">
+                            <img src="images/2TB.png" alt="Hotel Hideaway Players Council">
+                        </div>
+                        <div class="footer-logo-text">
+                            <h3>Hotel Hideaway</h3>
+                            <p>Players Council</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <a href="https://www.facebook.com/profile.php?id=100090158242868" target="_blank">Facebook 2TB</a>
+                        <span class="separator">•</span>
+                        <a href="https://www.facebook.com/profile.php?id=61571440132313" target="_blank">Council Facebook</a>
+                        <span class="separator">•</span>
+                        <a href="https://discord.gg/eEybV9ksBf" target="_blank">Discord Hotel Hideaway TH</a>
+                    </div>
+
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=100090158242868" target="_blank" aria-label="Facebook" class="footer-social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://discord.gg/eEybV9ksBf" target="_blank" aria-label="Discord" class="footer-social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+                                <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+                                <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
+                                <line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line>
+                                <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/hh_playercouncil/" target="_blank" aria-label="Instagram" class="footer-social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <p class="copyright">&copy; 2024 Hotel Hideaway Players Council</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Particles Background -->
+        <div id="particles-container" class="particles-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Language switcher
+        function setLanguage(lang) {
+            // Save the preferred language to localStorage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update active button state
+            document.getElementById('lang-en').classList.remove('active');
+            document.getElementById('lang-th').classList.remove('active');
+            document.getElementById('lang-' + lang).classList.add('active');
+            
+            // Show/hide elements based on language
+            const langElements = document.querySelectorAll('[data-th], [data-en], [data-th-html], [data-en-html]');
+            
+            langElements.forEach(el => {
+                if (el.hasAttribute(`data-${lang}-html`)) {
+                    el.innerHTML = el.getAttribute(`data-${lang}-html`);
+                } else if (el.hasAttribute(`data-${lang}`)) {
+                    el.textContent = el.getAttribute(`data-${lang}`);
+                }
+            });
+        }
+
+        // Enhanced notification system
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+            const notificationIcon = document.getElementById('notification-icon');
+            
+            // Clear any existing classes
+            notification.className = 'notification';
+            
+            // Set message
+            notificationMessage.textContent = message;
+            
+            // Set icon and class based on type
+            if (type === 'error') {
+                notificationIcon.className = 'notification-icon error';
+                notification.classList.add('notification-error');
+            } else {
+                notificationIcon.className = 'notification-icon success';
+                notification.classList.add('notification-success');
+            }
+            
+            // Show notification
+            notification.classList.add('show');
+            
+            // Auto-hide after 6 seconds
+            setTimeout(closeNotification, 6000);
+        }
+
+        function closeNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('show');
+        }
+
+        // Terms modal functionality
+        function openTermsModal() {
+            const lang = localStorage.getItem('preferredLanguage') || 'th';
+            const message = lang === 'en' 
+                ? 'Terms of Use: By submitting this form, you agree that your information will be collected and shared with the Hotel Hideaway Players\' Council for decision-making purposes.'
+                : 'ข้อกำหนดการใช้งาน: โดยการส่งแบบฟอร์มนี้ คุณยอมรับว่าข้อมูลของคุณจะถูกเก็บรวบรวมและแชร์กับสภาผู้เล่น Hotel Hideaway เพื่อวัตถุประสงค์ในการตัดสินใจ';
+            
+            alert(message);
+        }
+
+        // Form submission with Discord webhook
+        async function submitForm() {
+            const form = document.getElementById('application-form');
+            const submitButton = document.getElementById('submit-button');
+            const termsCheckbox = document.getElementById('terms');
+            const lang = localStorage.getItem('preferredLanguage') || 'th';
+
+            // Validate form
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Check terms agreement
+            if (!termsCheckbox.checked) {
+                const message = lang === 'en' 
+                    ? 'Please agree to the Terms of Use before submitting your application.'
+                    : 'โปรดยอมรับข้อกำหนดการใช้งานก่อนส่งใบสมัครของคุณ';
+
+                showNotification(message, 'error');
+                return;
+            }
+
+            // Disable submit button to prevent multiple submissions
+            submitButton.disabled = true;
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = `
+                <svg class="spinner" viewBox="0 0 50 50">
+                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                </svg>
+                <span>${lang === 'th' ? 'กำลังส่ง...' : 'Submitting...'}</span>
+            `;
+
+            try {
+                // Get user IP
+                let response = await fetch("https://api64.ipify.org?format=json");
+                let data = await response.json();
+                let userIP = data.ip;
+
+                // Encode IP with Base64
+                let encodedIP = btoa(userIP);
+
+                // Get all form data
+                let formData = new FormData(form);
+                let formValues = {};
+                formData.forEach((value, key) => {
+                    if (key !== 'terms') { // Skip the terms checkbox
+                        formValues[key] = value;
+                    }
+                });
+
+                // Format data for Discord in a more readable way
+                let discordMessage = `📩 **New Application Submitted** 📩\n\n`;
+                discordMessage += `🔐 **Apply ID:** \`${encodedIP}\`\n`;
+                discordMessage += `📅 **Date:** \`${new Date().toLocaleString()}\`\n\n`;
+                
+                // Add applicant info
+                discordMessage += `## Applicant Information\n`;
+                discordMessage += `**Hideaway Name:** ${formValues['entry.Hideaway Name']}\n`;
+                discordMessage += `**Facebook Link:** ${formValues['entry.Facebook Link']}\n\n`;
+                
+                // Add responses to questions with clear formatting
+                discordMessage += `## Application Responses\n\n`;
+                
+                // Why interested
+                discordMessage += `### Why interested in joining?\n`;
+                discordMessage += `${formValues['entry.Why are you interested in joining the Players\' Council in Hotel Hideaway?']}\n\n`;
+                
+                // Skills
+                discordMessage += `### Skills and knowledge\n`;
+                discordMessage += `${formValues['entry.What skills or knowledge do you have that could help the council operate smoothly?']}\n\n`;
+                
+                // Conflict resolution
+                discordMessage += `### Handling conflicting opinions\n`;
+                discordMessage += `${formValues['entry.How would you handle situations where there are conflicting opinions within the team?']}\n\n`;
+                
+                // Emergency assistance
+                discordMessage += `### Urgent issues resolution\n`;
+                discordMessage += `${formValues['entry.Are you prepared to assist in resolving urgent issues immediately if needed?']}\n\n`;
+                
+                // Role understanding
+                discordMessage += `### Understanding of Council role\n`;
+                discordMessage += `${formValues['entry.How do you understand the role of a Players\' Council member in Hotel Hideaway?']}\n\n`;
+
+                // Send to Discord Webhook
+                let discordPayload = {
+                    username: "Application Bot",
+                    avatar_url: "https://media.istockphoto.com/id/1278745898/vector/online-application-form-to-fill-popped-above-the-notebook-laptop-monitor-screen-icon-vector.jpg?s=612x612&w=0&k=20&c=Q2wiky1WhI54PqB7dc0HPqp0dsWHrNyh832Xg_r0M8Y=",
+                    content: discordMessage
+                };
+
+                await fetch("https://discord.com/api/webhooks/1351978006054440980/IH5HWSPvRglfsWjRgwhNUVuN0VLyZ2DfoUqFooIxxq10qNOBa_NK_-4ir9-pZ7O0IoWi", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(discordPayload)
+                });
+
+                // Clear form
+                form.reset();
+
+                // Show success notification
+                const successMessage = lang === 'en'
+                    ? 'Your application has been submitted successfully! Please wait for the announcement on Facebook or Discord.'
+                    : 'ส่งใบสมัครของคุณเรียบร้อยแล้ว! โปรดรอประกาศผลทาง Facebook หรือ Discord';
+
+                showNotification(successMessage, 'success');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (error) {
+                console.error('Error submitting the form:', error);
+                const errorMessage = lang === 'en'
+                    ? 'Error submitting the form. Please try again.'
+                    : 'เกิดข้อผิดพลาดในการส่งแบบฟอร์ม โปรดลองอีกครั้ง';
+                
+                showNotification(errorMessage, 'error');
+            } finally {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalText;
+            }
+        }
+
+        // Initialize language
+        document.addEventListener('DOMContentLoaded', function() {
+            // Apply saved language preference
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                setLanguage(savedLang);
+            }
+            
+            // Terms button event
+            const termsButton = document.getElementById('terms-button');
+            termsButton.addEventListener('click', openTermsModal);
+        });
+    </script>
+    <style>
+        /* Additional styles for apply page */
+        .language-switch {
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+            font-size: 0.875rem;
+        }
+        
+        .lang-btn.active {
+            color: white;
+            font-weight: 600;
+        }
+        
+        .lang-divider {
+            color: rgba(255, 255, 255, 0.3);
+            margin: 0 0.25rem;
+        }
+        
+        /* Notification styles */
+        .notification {
+            position: fixed;
+            top: 5rem;
+            right: 1rem;
+            z-index: 1000;
+            max-width: 24rem;
+            transform: translateX(calc(100% + 1rem));
+            transition: transform 0.3s ease-out;
+            display: flex;
+            align-items: flex-start;
+            background-color: var(--background);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        
+        .notification-icon.success {
+            background-color: rgba(34, 197, 94, 0.2);
+            color: rgb(34, 197, 94);
+        }
+        
+        .notification-icon.error {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: rgb(239, 68, 68);
+        }
+        
+        .notification-message {
+            flex-grow: 1;
+            font-size: 0.9375rem;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            padding: 0;
+            margin-left: 0.5rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .notification-close:hover {
+            color: white;
+        }
+        
+        .notification-success {
+            border-left: 3px solid rgb(34, 197, 94);
+        }
+        
+        .notification-error {
+            border-left: 3px solid rgb(239, 68, 68);
+        }
+        
+        /* Spinner animation */
+        .spinner {
+            animation: rotate 2s linear infinite;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .spinner .path {
+            stroke: white;
+            stroke-linecap: round;
+            animation: dash 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes dash {
+            0% {
+                stroke-dasharray: 1, 150;
+                stroke-dashoffset: 0;
+            }
+            50% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -35;
+            }
+            100% {
+                stroke-dasharray: 90, 150;
+                stroke-dashoffset: -124;
+            }
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .notification {
+                left: 1rem;
+                right: 1rem;
+                max-width: none;
+            }
+            
+            .language-switch {
+                position: absolute;
+                top: 1rem;
+                right: 4rem;
+            }
+        }
+    </style>
+</body>
+</html>

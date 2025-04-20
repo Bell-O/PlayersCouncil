@@ -1,0 +1,5 @@
+import fs from 'fs';
+
+// สร้างไฟล์ .nojekyll เปล่า
+fs.writeFileSync('.nojekyll', '');
+console.log('Created .nojekyll file successfully');
